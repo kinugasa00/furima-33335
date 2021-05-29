@@ -56,7 +56,7 @@ has_many :orders
 
 *Association*  
 belongs_to :user  
-has_one :orders  
+has_one :order  
 
 ## orders table
 |Column|Type|Options|
@@ -81,5 +81,5 @@ has_one :address
 |order|references     |null: false, foreign_key: true|  
 
 *Association*  
-belongs_to:orders  
+belongs_to:order  
 
