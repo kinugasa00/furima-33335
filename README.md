@@ -23,9 +23,9 @@ Things you may want to cover:
 
 * ...
 
-Database
+#Database
 
-Users table
+##Users table
 |Column|Type|Options|
 |------|-----|-----|
 |nickname    |string      |null: false|
@@ -38,11 +38,11 @@ Users table
 |first_name_kana|string   |null: false|
 |birthday     |date       |null:false|  
 
-Association  
+*Association*  
 has_many:items  
 has_many :order  
 
-items table
+##items table
 |Column|Type|Options|
 |------|-----|-----|
 |title                   |string    |null: false|
@@ -56,22 +56,22 @@ items table
 |price                   |integer   |null: false|
 |user                    |references|null: false, foreign_key: true|  
 
-Association  
+*Association*  
 belongs_to :user  
 has_one :order  
 
-order table
+##order table
 |Column|Type|Options|
 |------|-----|-----|
 |user|references|null: false, foreign_key: true|
 |item|references|null: false, foreign_key: true|  
 
-Association  
+*Association*  
 belongs_to :user  
 belongs_to :item  
 has_one :address  
 
-address table
+##address table
 |Column|Type|Options|
 |------|-----|-----|
 |postal_code|string   |null: false|
@@ -82,6 +82,6 @@ address table
 |phone_number|string  |null: false|
 |order|references     |null: false, foreign_key: true|  
 
-Association  
+*Association*  
 belongs_to:order  
 
