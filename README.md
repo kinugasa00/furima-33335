@@ -36,11 +36,11 @@ Users table
 |first_name  |string      |null: false|
 |last_name_kana|string    |null: false|
 |first_name_kana|string   |null: false|
-|birthday     |date       |null:false|
+|birthday     |date       |null:false|  
 
-Association
-has_many:items
-has_many :order
+Association  
+has_many:items  
+has_many :order  
 
 items table
 |Column|Type|Options|
@@ -54,22 +54,22 @@ items table
 |scheduled_delivery_id   |integer   |null: false|
 |genre_id	               |integer   |null: false|
 |price                   |integer   |null: false|
-|user                    |references|null: false, foreign_key: true|
+|user                    |references|null: false, foreign_key: true|  
 
-Association
-belongs_to :user
-has_one :order
+Association  
+belongs_to :user  
+has_one :order  
 
 order table
 |Column|Type|Options|
 |------|-----|-----|
 |user|references|null: false, foreign_key: true|
-|item|references|null: false, foreign_key: true|
+|item|references|null: false, foreign_key: true|  
 
-Association
-belongs_to :user
-belongs_to :item
-has_one :address
+Association  
+belongs_to :user  
+belongs_to :item  
+has_one :address  
 
 address table
 |Column|Type|Options|
@@ -80,8 +80,8 @@ address table
 |block_name|string    |null: false|
 |building_name        |string|
 |phone_number|string  |null: false|
-|order|references     |null: false, foreign_key: true|
+|order|references     |null: false, foreign_key: true|  
 
-Association
-belongs_to:order
+Association  
+belongs_to:order  
 
