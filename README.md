@@ -23,9 +23,9 @@ Things you may want to cover:
 
 * ...
 
-#Database
+# Database
 
-##Users table
+## Users table
 |Column|Type|Options|
 |------|-----|-----|
 |nickname    |string      |null: false|
@@ -42,7 +42,7 @@ Things you may want to cover:
 has_many:items  
 has_many :order  
 
-##items table
+## items table
 |Column|Type|Options|
 |------|-----|-----|
 |title                   |string    |null: false|
@@ -60,7 +60,7 @@ has_many :order
 belongs_to :user  
 has_one :order  
 
-##order table
+## order table
 |Column|Type|Options|
 |------|-----|-----|
 |user|references|null: false, foreign_key: true|
@@ -71,7 +71,7 @@ belongs_to :user
 belongs_to :item  
 has_one :address  
 
-##address table
+## address table
 |Column|Type|Options|
 |------|-----|-----|
 |postal_code|string   |null: false|
