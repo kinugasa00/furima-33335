@@ -26,8 +26,8 @@ Things you may want to cover:
 Database
 
 Users table
-|------|-----|-----|
 |Column|Type|Options|
+|------|-----|-----|
 |nickname    |string      |null: false|
 |email|string|null: false,unique: true|
 |password    |string      |null: false|
@@ -43,8 +43,8 @@ has_many:items
 has_many :order
 
 items table
-|------|-----|-----|
 |Column|Type|Options|
+|------|-----|-----|
 |title                   |string    |null: false|
 |text                    |text      |null: false|
 |category_id             |integer   |null: false
@@ -61,8 +61,8 @@ belongs_to :user
 has_one :order
 
 order table
-|------|-----|-----|
 |Column|Type|Options|
+|------|-----|-----|
 |user|references|null: false, foreign_key: true|
 |item|references|null: false, foreign_key: true|
 
@@ -72,8 +72,8 @@ belongs_to :item
 has_one :address
 
 address table
-|------|-----|-----|
 |Column|Type|Options|
+|------|-----|-----|
 |postal_code|string   |null: false|
 |prefecture_id|integer|null: false|
 |city_name|string     |null: false|
