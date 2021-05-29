@@ -58,7 +58,7 @@ has_many :orders
 belongs_to :user  
 has_one :orders  
 
-## order table
+## orders table
 |Column|Type|Options|
 |------|-----|-----|
 |user|references|null: false, foreign_key: true|
