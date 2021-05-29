@@ -30,7 +30,6 @@ Things you may want to cover:
 |------|-----|-----|
 |nickname    |string      |null: false|
 |email|string|null: false,unique: true|
-|password    |string      |null: false|
 |encrypted_password|string|null: false|
 |last_name   |string      |null: false|
 |first_name  |string      |null: false|
@@ -40,7 +39,7 @@ Things you may want to cover:
 
 *Association*  
 has_many:items  
-has_many :order  
+has_many :orders  
 
 ## items table
 |Column|Type|Options|
@@ -58,7 +57,7 @@ has_many :order
 
 *Association*  
 belongs_to :user  
-has_one :order  
+has_one :orders  
 
 ## order table
 |Column|Type|Options|
@@ -83,5 +82,5 @@ has_one :address
 |order|references     |null: false, foreign_key: true|  
 
 *Association*  
-belongs_to:order  
+belongs_to:orders  
 
