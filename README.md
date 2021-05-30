@@ -23,6 +23,7 @@ Things you may want to cover:
 
 * ...
 
+
 # Database
 
 ## Users table
@@ -82,4 +83,5 @@ has_one :address
 
 *Association*  
 belongs_to:order  
+
 
