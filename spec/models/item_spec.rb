@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-describe Item, type: :model do
-
+RSpec.describe Item, type: :model do
   before do
     @item = FactoryBot.build(:item)
   end
@@ -11,6 +10,7 @@ describe Item, type: :model do
       it '全ての項目が入力されていれば出品ができる' do
         expect(@item).to be_valid
       end
+    end
     
     context '商品出品がうまくいかないとき' do
       it 'imageが空では登録されない' do
@@ -83,6 +83,5 @@ describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Price must be less than 9999999")
       end
     end
-    
   end
 end
