@@ -1,30 +1,37 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# テックキャンプ最終課題
 
-Things you may want to cover:
+### フリマアプリのクローンサイトを個人で作成。
+### ユーザーの新規登録から商品の出品および購入が可能。
+#### This web application that hosts a free-market is developed by personal.
+#### Users can create their free-market accounts with this application, and sell or purchase products.
 
-* Ruby version
+## 説明:Description
+* ユーザー登録機能としてSNS及びSMS認証等を行い、クレジットカードを登録できます。
+* 商品出品機能として画像や商品カテゴリを含めた複数項目の情報をDBへ登録することができます。
+* 品購入機能としてユーザーが所持するクレジットカードを用いて商品の購入ができます。
+* SNS, SMS authentication is used to create a user account. Also, within a user account, a credit card can be registered.
+* SNS, SMS authentication is used to create a user account. Also, within a user account, a credit card can be registered.
+* When users purchases a product, the credit card that is registered in their account can be used.
 
-* System dependencies
+## 開発環境:Development environment
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Server ID
 
 
-# Database
+### Development environment
+* Ruby 2.6.5
+* Ruby on Rails 6.0.6
+* mysql2
+* AWS S3
+* Rspec
+
+
+## Database設計
+### ERD:EntityRelashionshipDiagram
+https://gyazo.com/e8aad85465ed2f152a7e167c4bc0507a
+
 
 ## Users table
 |Column|Type|Options|
