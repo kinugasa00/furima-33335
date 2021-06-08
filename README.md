@@ -17,8 +17,23 @@
 
 ## 開発環境:Development environment
 
-### Server ID
+### リンク
+https://furima-33335.herokuapp.com/
 
+## Basic認証
+* ID: admin
+* Pass: 2222
+
+## 購入者アカウント
+* email
+* pass
+* card
+* 利用期限
+* セキュリティコード
+
+## 出品者アカウント
+* email
+* pass
 
 ### Development environment
 * Ruby 2.6.5
