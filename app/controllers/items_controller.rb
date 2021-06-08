@@ -23,19 +23,19 @@ class ItemsController < ApplicationController
       end
   end
 
-  # def edit
-  #   unless user_signed_in? && current_user.id == @item.user_id
-  #     redirect_to root_path
-  #   end
-  # end
+  def edit
+    unless user_signed_in? && current_user.id == @item.user_id
+      redirect_to root_path
+    end
+  end
 
-  # def update
-  #   if @item.update(item_params)
-  #     redirect_to item_path(@item.id)
-  #   else
-  #     render :edit
-  #   end
-  # end
+  def update
+    if @item.update(item_params)
+      redirect_to item_path(@item.id)
+    else
+      render :edit
+    end
+  end
 
   # def destroy
   #   if user_signed_in? && current_user.id == @item.user_id
