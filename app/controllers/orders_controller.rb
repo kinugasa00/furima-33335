@@ -1,13 +1,10 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_item, only: [:index, :create]
+  before_action :id_conf, only: [:index, :create]
 
   def index
-    if user_signed_in? && current_user.id != @item.user_id && @item.order == nil
-      @item_order = ItemOrder.new
-    else
-      redirect_to root_path
-    end
+    @item_order = ItemOrder.new
   end
 
   def create
@@ -22,6 +19,10 @@ class OrdersController < ApplicationController
   end
 
   private
+
+  def id_conf
+    redirect_to action: :index unless current_user.id != @item.user_id && @item.order == nil
+  end
 
   def set_item
     @item = Item.find(params[:item_id])

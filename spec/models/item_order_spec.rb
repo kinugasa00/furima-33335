@@ -2,12 +2,19 @@ require 'rails_helper'
 
 RSpec.describe ItemOrder, type: :model do
   before do
-    @item_order = FactoryBot.build(:item_order)
+    user = FactoryBot.create(:user)
+    item = FactoryBot.create(:item)
+    @item_order = FactoryBot.build(:item_order, user_id: user.id, item_id: item.id)
+    sleep 0.1
   end
 
   describe '購入者情報の保存' do
     context '購入が保存できる場合' do
       it '全ての項目が入力されていれば購入ができる' do
+        expect(@item_order).to be_valid
+      end
+      it '建物名が空でも購入できる' do
+        @item_order.building_name = nil
         expect(@item_order).to be_valid
       end
     end
@@ -55,6 +62,26 @@ RSpec.describe ItemOrder, type: :model do
       end
       it 'phone_numberが11桁でなければ購入できない' do
         @item_order.phone_number = "080123456789"
+        @item_order.valid?
+        expect(@item_order.errors.full_messages).to include("Phone number is invalid")
+      end
+      it 'user_idが空では購入できない' do
+        @item_order.user_id = nil
+        @item_order.valid?
+        expect(@item_order.errors.full_messages).to include("User can't be blank")
+      end
+      it 'item_idが空では購入できない' do
+        @item_order.item_id = nil
+        @item_order.valid?
+        expect(@item_order.errors.full_messages).to include("Item can't be blank")
+      end
+      it 'prefecture_idに---が選択されていると購入できない' do
+        @item_order.prefecture_id = "---"
+        @item_order.valid?
+        expect(@item_order.errors.full_messages).to include("Prefecture is not a number")
+      end
+      it '電話番号が英数混合では購入できない' do
+        @item_order.phone_number = "0801234aaaa"
         @item_order.valid?
         expect(@item_order.errors.full_messages).to include("Phone number is invalid")
       end
