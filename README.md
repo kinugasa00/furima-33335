@@ -2,23 +2,17 @@
 
 # テックキャンプ最終課題
 
+## アプリケーション概要
 ### フリマアプリのクローンサイトを個人で作成。
 ### ユーザーの新規登録から商品の出品および購入が可能。
-#### This web application that hosts a free-market is developed by personal.
-#### Users can create their free-market accounts with this application, and sell or purchase products.
 
-## 説明:Description
+
+## 説明/利用方法
 * ユーザー登録機能としてSNS及びSMS認証等を行い、クレジットカードを登録できます。
 * 商品出品機能として画像や商品カテゴリを含めた複数項目の情報をDBへ登録することができます。
 * 品購入機能としてユーザーが所持するクレジットカードを用いて商品の購入ができます。
-* SNS, SMS authentication is used to create a user account. Also, within a user account, a credit card can be registered.
-* SNS, SMS authentication is used to create a user account. Also, within a user account, a credit card can be registered.
-* When users purchases a product, the credit card that is registered in their account can be used.
 
-## 開発環境:Development environment
-
-
-### リンク
+### URL
 https://furima-33335.herokuapp.com/
 
 ## Basic認証
@@ -26,17 +20,17 @@ https://furima-33335.herokuapp.com/
 * Pass: 2222
 
 ## 購入者アカウント
-* email
-* pass
-* card
-* 利用期限
-* セキュリティコード
+* email:b@b
+* pass:a111111
+* card: 4242424242424242
+* 利用期限: 当日より未来の日付
+* セキュリティコード: 123
 
 ## 出品者アカウント
-* email
-* pass
+* email:g@g
+* pass:a111111
 
-### Development environment
+## 開発環境
 * Ruby 2.6.5
 * Ruby on Rails 6.0.6
 * mysql2
@@ -46,7 +40,7 @@ https://furima-33335.herokuapp.com/
 
 ## Database設計
 ### ERD:EntityRelashionshipDiagram
-https://gyazo.com/e8aad85465ed2f152a7e167c4bc0507a
+[![Image from Gyazo](https://i.gyazo.com/e8aad85465ed2f152a7e167c4bc0507a.png)](https://gyazo.com/e8aad85465ed2f152a7e167c4bc0507a)
 
 
 ## Users table
