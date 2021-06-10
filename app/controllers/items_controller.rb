@@ -23,9 +23,10 @@ class ItemsController < ApplicationController
         render :new
       end
   end
+  
 
   def edit
-
+    redirect_to action: :index unless @item.order != nil
   end
 
   def update
@@ -42,7 +43,7 @@ class ItemsController < ApplicationController
   end
 
   private
-
+  
   def redirect
     redirect_to action: :index unless current_user.id == @item.user_id
   end
@@ -52,6 +53,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-  params.require(:item).permit(:title, :text, :category_id, :sales_status_id, :shipping_fee_status_id, :prefecture_id, :scheduled_delivery_id, :price, :image).merge(user_id: current_user.id)
+    params.require(:item).permit(:title, :text, :category_id, :sales_status_id, :shipping_fee_status_id, :prefecture_id, :scheduled_delivery_id, :price, :image).merge(user_id: current_user.id)
   end
 end

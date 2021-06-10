@@ -76,7 +76,7 @@ RSpec.describe ItemOrder, type: :model do
         expect(@item_order.errors.full_messages).to include("Item can't be blank")
       end
       it 'prefecture_idに---が選択されていると購入できない' do
-        @item_order.prefecture_id = nil
+        @item_order.prefecture_id = 1
         @item_order.valid?
         expect(@item_order.errors.full_messages).to include("Prefecture can't be blank")
       end
