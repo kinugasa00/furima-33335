@@ -26,7 +26,11 @@ class ItemsController < ApplicationController
   
 
   def edit
-    redirect_to action: :index unless @item.order != nil
+    if @item.order != nil
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def update
